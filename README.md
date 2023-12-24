@@ -1,7 +1,7 @@
 # Cobot
 
 
-![App Screenshot](https://github.com/yuvimehta/cobot/blob/main/Screenshots/Screenshot%20from%202023-12-24%2002-08-44.png)
+![App Screenshot](https://github.com/yuvimehta/Cobot/blob/main/Screenshots/Screenshot%20from%202023-12-24%2002-08-44.png)
 ## Overview
 
 Hey there,
@@ -68,7 +68,7 @@ roslaunch cobot_gui gui.launch
 ```
 Now cobot is all set to work.
 
-![App Screenshot](https://github.com/yuvimehta/cobot/blob/main/Screenshots/Screenshot%20from%202023-12-24%2002-10-20.png)
+![App Screenshot](https://github.com/yuvimehta/Cobot/blob/main/Screenshots/Screenshot%20from%202023-12-24%2002-10-20.png)
 
 
 Make different gazebo worlds for usecases,try out different control methods by integrating different tech like voice commands, computer vision etc..
