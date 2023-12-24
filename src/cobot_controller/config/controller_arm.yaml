@@ -1,0 +1,25 @@
+cobot_controller:
+  # Publish all joint states -----------------------------------
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50
+
+  # Position Controllers --------------------------------------
+  joint_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: [BJ,SJ,EJ,W1J,W2J] 
+    constraints:
+       goal_time: 0.6
+       stopped_velocity_tolerance: 0.05
+       BJ: {trajectory: 0.1, goal: 0.1}
+       SJ: {trajectory: 0.1, goal: 0.1}
+       EJ: {trajectory: 0.1, goal: 0.1}
+       W1J: {trajectory: 0.1, goal: 0.1}
+       W2J: {trajectory: 0.1, goal: 0.1}
+    stop_trajectory_duration: 0.5
+    state_publish_rate:  25
+    action_monitor_rate: 10
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+
+
+

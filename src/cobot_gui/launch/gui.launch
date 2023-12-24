@@ -1,0 +1,4 @@
+<launch>
+  <node name="slider_gui" pkg="cobot_gui" type="planner.py" output="screen">s
+  </node>
+</launch>

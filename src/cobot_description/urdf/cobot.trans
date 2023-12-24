@@ -1,0 +1,59 @@
+<?xml version="1.0" ?>
+<robot name="Cobot" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+<transmission name="BJ_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="BJ">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="BJ_actr">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="SJ_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="SJ">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="SJ_actr">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="EJ_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="EJ">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="EJ_actr">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="W1J_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="W1J">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="W1J_actr">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="W2J_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="W2J">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="W2J_actr">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+</robot>

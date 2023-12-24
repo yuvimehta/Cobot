@@ -1,0 +1,257 @@
+<?xml version="1.0" ?>
+<!-- =================================================================================== -->
+<!-- |    EDITING THIS FILE BY HAND IS NOT RECOMMENDED                                 | -->
+<!-- =================================================================================== -->
+<robot name="Cobot">
+    <material name="silver">
+        <color rgba="0.700 0.700 0.700 1.000" />
+    </material>
+    <transmission name="BJ_tran">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="BJ">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="BJ_actr">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="SJ_tran">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="SJ">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="SJ_actr">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="EJ_tran">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="EJ">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="EJ_actr">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="W1J_tran">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="W1J">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="W1J_actr">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="W2J_tran">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="W2J">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="W2J_actr">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <gazebo>
+        <plugin filename="libgazebo_ros_control.so" name="gazebo_ros_control">
+            <robotNamespace>/</robotNamespace>
+        </plugin>
+    </gazebo>
+    <gazebo reference="base_link">
+        <material>Gazebo/Silver</material>
+        <mu1>0.2</mu1>
+        <mu2>0.2</mu2>
+        <selfCollide>true</selfCollide>
+        <gravity>true</gravity>
+    </gazebo>
+    <gazebo reference="base_joint_1">
+        <material>Gazebo/Silver</material>
+        <mu1>0.2</mu1>
+        <mu2>0.2</mu2>
+        <selfCollide>true</selfCollide>
+    </gazebo>
+    <gazebo reference="Shoulder_1">
+        <material>Gazebo/Silver</material>
+        <mu1>0.2</mu1>
+        <mu2>0.2</mu2>
+        <selfCollide>true</selfCollide>
+    </gazebo>
+    <gazebo reference="elbow_joint_1">
+        <material>Gazebo/Silver</material>
+        <mu1>0.2</mu1>
+        <mu2>0.2</mu2>
+        <selfCollide>true</selfCollide>
+    </gazebo>
+    <gazebo reference="wrist1_1">
+        <material>Gazebo/Silver</material>
+        <mu1>0.2</mu1>
+        <mu2>0.2</mu2>
+        <selfCollide>true</selfCollide>
+    </gazebo>
+    <gazebo reference="wrist2_1">
+        <material>Gazebo/Silver</material>
+        <mu1>0.2</mu1>
+        <mu2>0.2</mu2>
+        <selfCollide>true</selfCollide>
+    </gazebo>
+    <link name="world" />
+    <link name="base_link">
+        <inertial>
+            <origin rpy="0 0 0" xyz="-1.2972850039755492e-17 0.0 0.03670442150572817" />
+            <mass value="5.503442487223917" />
+            <inertia ixx="0.007142" ixy="-0.0" ixz="-0.0" iyy="0.007142" iyz="-0.0" izz="0.007951" />
+        </inertial>
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <geometry>
+                <mesh filename="package://arm/meshes/base_link.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+            <material name="silver" />
+        </visual>
+        <collision>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <geometry>
+                <mesh filename="package://arm/meshes/base_link.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="base_joint_1">
+        <inertial>
+            <origin rpy="0 0 0" xyz="-5.95929710844456e-10 5.996805720800185e-09 0.06166062192697862" />
+            <mass value="10.611591187770788" />
+            <inertia ixx="0.014633" ixy="0.0" ixz="-0.0" iyy="0.028949" iyz="0.0" izz="0.0282" />
+        </inertial>
+        <visual>
+            <origin rpy="0 0 0" xyz="-0.0 -0.0 -0.08" />
+            <geometry>
+                <mesh filename="package://arm/meshes/base_joint_1.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+            <material name="silver" />
+        </visual>
+        <collision>
+            <origin rpy="0 0 0" xyz="-0.0 -0.0 -0.08" />
+            <geometry>
+                <mesh filename="package://arm/meshes/base_joint_1.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="Shoulder_1">
+        <inertial>
+            <origin rpy="0 0 0" xyz="-0.08000000000000002 -6.6011772650993885e-18 0.1193073921952982" />
+            <mass value="10.815545655264254" />
+            <inertia ixx="0.103047" ixy="0.0" ixz="-0.0" iyy="0.199811" iyz="-0.0" izz="0.112944" />
+        </inertial>
+        <visual>
+            <origin rpy="0 0 0" xyz="-0.08 -0.0 -0.15" />
+            <geometry>
+                <mesh filename="package://arm/meshes/Shoulder_1.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+            <material name="silver" />
+        </visual>
+        <collision>
+            <origin rpy="0 0 0" xyz="-0.08 -0.0 -0.15" />
+            <geometry>
+                <mesh filename="package://arm/meshes/Shoulder_1.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="elbow_joint_1">
+        <inertial>
+            <origin rpy="0 0 0" xyz="-0.08997963492715857 -0.11061140786869318 -0.004921535193373183" />
+            <mass value="26.774299686619884" />
+            <inertia ixx="0.30536" ixy="8e-06" ixz="-0.0" iyy="0.051149" iyz="3.2e-05" izz="0.321794" />
+        </inertial>
+        <visual>
+            <origin rpy="0 0 0" xyz="-0.09 -0.0 -0.4" />
+            <geometry>
+                <mesh filename="package://arm/meshes/elbow_joint_1.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+            <material name="silver" />
+        </visual>
+        <collision>
+            <origin rpy="0 0 0" xyz="-0.09 -0.0 -0.4" />
+            <geometry>
+                <mesh filename="package://arm/meshes/elbow_joint_1.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="wrist1_1">
+        <inertial>
+            <origin rpy="0 0 0" xyz="0.055000000000000014 0.0 -0.07187789128386346" />
+            <mass value="6.5613388718047485" />
+            <inertia ixx="0.029992" ixy="-0.0" ixz="0.0" iyy="0.057258" iyz="0.0" izz="0.035263" />
+        </inertial>
+        <visual>
+            <origin rpy="0 0 0" xyz="0.055 0.25 -0.4" />
+            <geometry>
+                <mesh filename="package://arm/meshes/wrist1_1.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+            <material name="silver" />
+        </visual>
+        <collision>
+            <origin rpy="0 0 0" xyz="0.055 0.25 -0.4" />
+            <geometry>
+                <mesh filename="package://arm/meshes/wrist1_1.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="wrist2_1">
+        <inertial>
+            <origin rpy="0 0 0" xyz="-0.0600072785371625 -0.010924894509253713 -0.004877997934775419" />
+            <mass value="5.063124340718995" />
+            <inertia ixx="0.005913" ixy="-1e-06" ixz="0.0" iyy="0.005825" iyz="1.8e-05" izz="0.007459" />
+        </inertial>
+        <visual>
+            <origin rpy="0 0 0" xyz="-0.06 0.25 -0.25" />
+            <geometry>
+                <mesh filename="package://arm/meshes/wrist2_1.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+            <material name="silver" />
+        </visual>
+        <collision>
+            <origin rpy="0 0 0" xyz="-0.06 0.25 -0.25" />
+            <geometry>
+                <mesh filename="package://arm/meshes/wrist2_1.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="fixed" type="fixed">
+        <parent link="world" />
+        <child link="base_link" />
+    </joint>
+    <joint name="BJ" type="continuous">
+        <origin rpy="0 0 0" xyz="0.0 0.0 0.08" />
+        <parent link="base_link" />
+        <child link="base_joint_1" />
+        <axis xyz="0.0 0.0 1.0" />
+    </joint>
+    <joint name="SJ" type="continuous">
+        <origin rpy="0 0 0" xyz="0.08 0.0 0.07" />
+        <parent link="base_joint_1" />
+        <child link="Shoulder_1" />
+        <axis xyz="1.0 0.0 0.0" />
+    </joint>
+    <joint name="EJ" type="continuous">
+        <origin rpy="0 0 0" xyz="0.01 0.0 0.25" />
+        <parent link="Shoulder_1" />
+        <child link="elbow_joint_1" />
+        <axis xyz="1.0 0.0 0.0" />
+    </joint>
+    <joint name="W1J" type="continuous">
+        <origin rpy="0 0 0" xyz="-0.145 -0.25 0.0" />
+        <parent link="elbow_joint_1" />
+        <child link="wrist1_1" />
+        <axis xyz="1.0 0.0 0.0" />
+    </joint>
+    <joint name="W2J" type="continuous">
+        <origin rpy="0 0 0" xyz="0.115 0.0 -0.15" />
+        <parent link="wrist1_1" />
+        <child link="wrist2_1" />
+        <axis xyz="1.0 0.0 0.0" />
+    </joint>
+</robot>
+

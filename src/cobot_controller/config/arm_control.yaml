@@ -1,0 +1,30 @@
+arm_controller:
+    type: position_controllers/JointTrajectoryController
+    joints:
+       - BJ
+       - SJ
+       - EJ
+       - W1J
+       - W2J
+    stop_trajectory_duration: 0.5
+    state_publish_rate:  25
+    action_monitor_rate: 10
+/constraints:
+  goal_time: 0.6
+  stopped_velocity_tolerance: 0.05
+  BJ: {trajectory: 0.2, goal: 0.2}
+  SJ: {trajectory: 0.2, goal: 0.2}
+  EJ: {trajectory: 0.2, goal: 0.3}
+  W1J: {trajectory: 0.2, goal: 0.1}
+  W2J: {trajectory: 0.2, goal: 0.1}
+    
+/gazebo_ros_control:
+    pid_gains:
+      BJ: {p: 2000.0, i: -16000.0, d: 60.0}
+      SJ: {p: 16000.0, i: -10000.0, d: 60.0}
+      EJ: {p: 22000.0, i: -20000.0, d: 60.0}
+      W1J: {p: 10000.0, i: -12000.0, d: 10.0}
+      W2J: {p: 100.0, i: 0.0, d: 0.0}
+      
+      
+      
